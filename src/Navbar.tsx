@@ -1,46 +1,53 @@
-import React, { useState, useEffect } from 'react';
-import { Sun, Moon, Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Sun, Moon, Menu, X } from "lucide-react";
+import type AboutMe from "./AboutMe/AboutMe";
 
-type Theme = 'light' | 'dark';
+type Theme = "light" | "dark";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState<Theme>(() => {
     // Check local storage or system preference on initial load
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('theme') as Theme;
-      return saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("theme") as Theme;
+      return (
+        saved ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light")
+      );
     }
-    return 'light';
+    return "light";
   });
 
   useEffect(() => {
     const root = window.document.documentElement;
-    if (theme === 'dark') {
-      root.classList.add('dark');
+    if (theme === "dark") {
+      root.classList.add("dark");
     } else {
-      root.classList.remove('dark');
+      root.classList.remove("dark");
     }
-    localStorage.setItem('theme', theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
-  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+  const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
 
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#' },
-    { name: 'Projects', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: "Home", href: "#pageOne" },
+    { name: "About", href: "#AboutMe" },
+    { name: "Skills", href: "#skills" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-white dark:bg-white backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+    <nav className="fixed w-full z-50 bg-white dark:bg-white backdrop-blur-md  dark:border-gray-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <span className="text-xl font-bold text-[#00CED1] dark:text-[#00b3b5]">IBKDesk Portfolio</span>
+          <div className="flex items-center">
+            <span className="animate-bounce text-xl font-bold text-[#00CED1] dark:text-[#00b3b5]">
+              IBKCode Portfolio
+            </span>
           </div>
 
           {/* Desktop Nav */}
@@ -49,19 +56,19 @@ const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white px-3 py-2 text-sm font-medium transition-colors"
+                className="text-gray-900 font-bold dark:text-gray-300 hover:text-blue-600 dark:hover:text-white px-3 py-2 text-sm  transition-colors"
               >
                 {link.name}
               </a>
             ))}
-            
+
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-yellow-400 hover:ring-2 ring-blue-400 transition-all"
               aria-label="Toggle Theme"
             >
-              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+              {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
             </button>
           </div>
 
@@ -71,7 +78,7 @@ const Navbar: React.FC = () => {
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-yellow-400"
             >
-              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+              {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}

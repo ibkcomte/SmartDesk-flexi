@@ -7,7 +7,7 @@ const PageOne: React.FC = () => {
 
   return (
     <>
-     <div className="flex flex-row items-center p-12 bg-white rounded-xl">
+     <div id="pageOne" className="flex flex-row items-center p-12 bg-white rounded-xl">
     <PageOneCard name="Ibukun Dada" role="Developer" />
     <img
           src={passport} 
