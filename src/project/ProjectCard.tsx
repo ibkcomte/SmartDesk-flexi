@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Github, ExternalLink } from 'lucide-react'; 
 
 interface Project {
@@ -14,9 +14,9 @@ interface Project {
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
-    <div className="bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col h-full">
-      {/* Image Container with Status Badge */}
-      <div className="relative h-64 overflow-hidden bg-slate-100">
+    <div className="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col h-min">
+     
+      <div className="relative h-44 overflow-hidden bg-slate-100">
         <img 
           src={project.image} 
           alt={project.title} 
@@ -32,8 +32,8 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       </div>
 
       {/* Content Section */}
-      <div className="p-8 flex flex-col items-center text-center flex-grow">
-        <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+      <div className="p-8 flex flex-col items-center text-center">
+        <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-4">
           {project.title}
         </h3>
         <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 px-4">
@@ -47,7 +47,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           ))}
         </div>
 
-        {/* Footer Links - Infusing your Turquoise Color */}
+
         <div className="mt-auto pt-6 w-full flex justify-center gap-6 border-t border-slate-50 dark:border-slate-800">
           {project.liveUrl && (
             <a href={project.liveUrl} className="text-slate-600 hover:text-[#00CED1] transition-colors">

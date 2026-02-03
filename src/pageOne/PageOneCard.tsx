@@ -7,7 +7,7 @@ interface PageOneCardProps {
 
 const PageOneCard: React.FC<PageOneCardProps> = ({ name,  }) => {
   return (
-    <div className="max-w-md bg-white bright:bg-slate-900 flex flex-cols-6 flex-wrap rounded-3xl shadow-teal-50  border border-slate-100 overflow-auto transition-transform hover:scale-[1.02]">
+    <div className="max-w-md bg-white bright:bg-slate-900 flex flex-cols-6 flex-wrap rounded-3xl shadow-teal-50  border border-slate-100 transition-transform hover:scale-[1.02]">
       <div className="flex flex-col items-center text-center">
         <h3 className="font-bold text-[70px]">Hi, I'm</h3>
         <h2 className="text-[60px] font-extrabold tracking-tighter text-[#00CED1] dark:text-[#00b3b5]">

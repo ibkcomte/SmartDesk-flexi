@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Sun, Moon, Menu, X } from "lucide-react";
-import type AboutMe from "./AboutMe/AboutMe";
-
+import { Sun, Moon, Menu, X } from "lucide-react"; 
 type Theme = "light" | "dark";
 
 const Navbar: React.FC = () => {
@@ -12,23 +10,23 @@ const Navbar: React.FC = () => {
       const saved = localStorage.getItem("theme") as Theme;
       return (
         saved ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light")
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
       );
     }
-    return "light";
+    return "dark";
   });
 
   useEffect(() => {
-    const root = window.document.documentElement;
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+  const root = window.document.documentElement;
+  
+  if (theme === "dark") { 
+    root.classList.add("dark");
+  } else {
+    root.classList.remove("dark");
+  }
+  localStorage.setItem("theme", theme);
+}, [theme]);
+  
 
   const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
 
@@ -40,7 +38,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-white dark:bg-white backdrop-blur-md  dark:border-gray-800 transition-colors duration-300">
+    <nav className="fixed w-full z-50 bg-white dark:bg-black backdrop-blur-md dark:border-gray-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -51,12 +49,12 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 ">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-900 font-bold dark:text-gray-300 hover:text-blue-600 dark:hover:text-white px-3 py-2 text-sm  transition-colors"
+                className="text-black font-bold dark:text-gray-700 hover:text-lime-600 dark:hover:text-white px-3 py-2 text-sm  transition-colors"
               >
                 {link.name}
               </a>
@@ -65,10 +63,10 @@ const Navbar: React.FC = () => {
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-yellow-400 hover:ring-2 ring-blue-400 transition-all"
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-lime-400 hover:ring-2 transition-all"
               aria-label="Toggle Theme"
             >
-              {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+               {theme === "light" ? <Moon size={20} /> : <Sun size={20} />} 
             </button>
           </div>
 

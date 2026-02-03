@@ -1,6 +1,31 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    @apply antialiased;
+    color-scheme: light;
+  }
+  
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    /* Merged all body styles into one block */
+    @apply transition-colors duration-300 min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100;
+  }
+
+  /* Target all elements for border transitions */
+  * {
+    @apply transition-colors duration-300 border-slate-200 dark:border-slate-800;
+  }
 }
+@theme {
+  /* You can add custom brand colors here in v4 */
+  --color-indigo-600: #4f46e5;
+  --color-slate-950: #020617;
+}
+
 
