@@ -13,15 +13,6 @@ interface Project {
   liveUrl?: string;
 }
 
-// Explicitly typing variants to avoid the "red underline" issue
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.6, ease: "easeOut" } 
-  }
-};
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (

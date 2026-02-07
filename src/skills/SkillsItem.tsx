@@ -9,22 +9,7 @@ interface SkillsItemProps {
 
 const SkillsItem: React.FC<SkillsItemProps> = ({ skill, percentage, description }) => {
   // Animation Variants
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.5, ease: "easeOut" } 
-    },
-  };
-
-  const barVariants = {
-    hidden: { width: 0 },
-    visible: { 
-      width: `${percentage}%`, 
-      transition: { duration: 1.5, delay: 0.2, ease: "circOut" } 
-    },
-  };
+  
 
   return (
     <motion.div 
