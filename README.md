@@ -1,6 +1,46 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🚀 IbkCodes Portfolio | Engineering with Purpose
+
+A high-performance, responsive portfolio built with a focus on smooth user experience, modern aesthetics (MBA-Hybrid branding), and clean code architecture.
+
+---
+
+## 🎨 The Aesthetic
+The project utilizes a custom **Teal & Lime** color palette designed to bridge the gap between "Corporate Professional" and "Creative Engineer." 
+
+- **Primary:** `#00CED1` (Teal) - Signifying trust and clarity.
+- **Accent:** `Lime-400` - Signifying energy and action.
+- **Glassmorphism:** Used for cards to create depth without clutter.
+
+## 🛠️ Tech Stack
+
+| Category | Technology |
+| :--- | :--- |
+| **Frontend** | React 18, TypeScript, Vite |
+| **Styling** | Tailwind CSS |
+| **Animation** | Framer Motion |
+| **Icons** | Lucide React |
+| **Form Handling** | Formspree API |
+| **Deployment** | Vercel / GitHub Actions |
+
+## ✨ Key Features
+
+- **Dynamic Animations:** Staggered list entries and hover-reactive project cards using Framer Motion.
+- **Responsive Architecture:** Mobile-first design using Tailwind's grid and flexbox systems.
+- **Dark Mode Support:** Fully optimized slate-950 theme for night-time viewing.
+- **Functional Contact Form:** Integrated with Formspree for real-time lead generation without a backend.
+- **Type Safety:** 100% TypeScript for robust code and easier scaling.
+
+## 🏗️ Architecture & Thought Process
+
+I chose **Vite** over Create React App for its superior build speed and modern Hot Module Replacement (HMR). My component structure follows an "Atomic" approach:
+1. **Components:** Reusable UI blocks like `ProjectCard` and `ContactDetail`.
+2. **Sections:** Layout wrappers like `ProjectsSection` and `AboutMe`.
+3. **Data:** Decoupled animation variants and project data to keep components clean and readable.
+
+
+
 
 Currently, two official plugins are available:
 
